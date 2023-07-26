@@ -1305,7 +1305,7 @@ export type Lesson = Node & {
   /** User that last published this document */
   publishedBy?: Maybe<User>;
   scheduledIn: Array<ScheduledOperation>;
-  slug?: Maybe<Scalars['String']['output']>;
+  slug: Scalars['String']['output'];
   /** System stage field */
   stage: Stage;
   teacher?: Maybe<Teacher>;
@@ -1397,7 +1397,7 @@ export type LessonCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   lessonType: LessonType;
-  slug?: InputMaybe<Scalars['String']['input']>;
+  slug: Scalars['String']['input'];
   teacher?: InputMaybe<TeacherCreateOneInlineInput>;
   title: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -5796,12 +5796,12 @@ export type GetLessonBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetLessonBySlugQuery = { __typename?: 'Query', lesson?: { __typename?: 'Lesson', title: string, lessonType: LessonType, videoId: string, slug?: string | null, description?: string | null, teacher?: { __typename?: 'Teacher', name: string, bio: string, avatarURL: string } | null } | null };
+export type GetLessonBySlugQuery = { __typename?: 'Query', lesson?: { __typename?: 'Lesson', title: string, lessonType: LessonType, videoId: string, slug: string, description?: string | null, teacher?: { __typename?: 'Teacher', name: string, bio: string, avatarURL: string } | null } | null };
 
 export type GetLessonsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetLessonsQuery = { __typename?: 'Query', lessons: Array<{ __typename?: 'Lesson', id: string, title: string, slug?: string | null, lessonType: LessonType, availableAt?: any | null }> };
+export type GetLessonsQuery = { __typename?: 'Query', lessons: Array<{ __typename?: 'Lesson', id: string, title: string, slug: string, lessonType: LessonType, availableAt?: any | null }> };
 
 
 export const CreateSubscriberDocument = gql`
